@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10282E8806F3FE35D1CEC500 /* Pods_NizarSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5775B5F9C22E11467235621B /* Pods_NizarSocial.framework */; };
+		8C1C66131DFA4DBA0055C36E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1C66121DFA4DBA0055C36E /* GoogleService-Info.plist */; };
 		8CB7001D1DFA4D1B00EF652B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7001C1DFA4D1B00EF652B /* AppDelegate.swift */; };
-		8CB7001F1DFA4D1B00EF652B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7001E1DFA4D1B00EF652B /* ViewController.swift */; };
+		8CB7001F1DFA4D1B00EF652B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */; };
 		8CB700221DFA4D1B00EF652B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700201DFA4D1B00EF652B /* Main.storyboard */; };
 		8CB700241DFA4D1B00EF652B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700231DFA4D1B00EF652B /* Assets.xcassets */; };
 		8CB700271DFA4D1B00EF652B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700251DFA4D1B00EF652B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3468F9623A655ADEC8E47AC6 /* Pods-NizarSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.debug.xcconfig"; sourceTree = "<group>"; };
+		5775B5F9C22E11467235621B /* Pods_NizarSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NizarSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1C66121DFA4DBA0055C36E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CB700191DFA4D1B00EF652B /* NizarSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NizarSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB7001C1DFA4D1B00EF652B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CB7001E1DFA4D1B00EF652B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		8CB700211DFA4D1B00EF652B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CB700231DFA4D1B00EF652B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CB700261DFA4D1B00EF652B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CB700281DFA4D1B00EF652B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10282E8806F3FE35D1CEC500 /* Pods_NizarSocial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		226F69F2B53AB03B946663F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5775B5F9C22E11467235621B /* Pods_NizarSocial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8CB700101DFA4D1B00EF652B = {
 			isa = PBXGroup;
 			children = (
 				8CB7001B1DFA4D1B00EF652B /* NizarSocial */,
 				8CB7001A1DFA4D1B00EF652B /* Products */,
+				AADFB02E7D8A94E9818A386F /* Pods */,
+				226F69F2B53AB03B946663F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +72,23 @@
 			isa = PBXGroup;
 			children = (
 				8CB7001C1DFA4D1B00EF652B /* AppDelegate.swift */,
-				8CB7001E1DFA4D1B00EF652B /* ViewController.swift */,
+				8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */,
 				8CB700201DFA4D1B00EF652B /* Main.storyboard */,
 				8CB700231DFA4D1B00EF652B /* Assets.xcassets */,
 				8CB700251DFA4D1B00EF652B /* LaunchScreen.storyboard */,
 				8CB700281DFA4D1B00EF652B /* Info.plist */,
+				8C1C66121DFA4DBA0055C36E /* GoogleService-Info.plist */,
 			);
 			path = NizarSocial;
+			sourceTree = "<group>";
+		};
+		AADFB02E7D8A94E9818A386F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3468F9623A655ADEC8E47AC6 /* Pods-NizarSocial.debug.xcconfig */,
+				BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CB7002B1DFA4D1B00EF652B /* Build configuration list for PBXNativeTarget "NizarSocial" */;
 			buildPhases = (
+				5AA6978762C0074B207BE7FD /* [CP] Check Pods Manifest.lock */,
 				8CB700151DFA4D1B00EF652B /* Sources */,
 				8CB700161DFA4D1B00EF652B /* Frameworks */,
 				8CB700171DFA4D1B00EF652B /* Resources */,
+				DE395A2BF1D73511000B9EE7 /* [CP] Embed Pods Frameworks */,
+				D0AD7AF456A960EE7A9599B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CB700271DFA4D1B00EF652B /* LaunchScreen.storyboard in Resources */,
+				8C1C66131DFA4DBA0055C36E /* GoogleService-Info.plist in Resources */,
 				8CB700241DFA4D1B00EF652B /* Assets.xcassets in Resources */,
 				8CB700221DFA4D1B00EF652B /* Main.storyboard in Resources */,
 			);
@@ -132,12 +163,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5AA6978762C0074B207BE7FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0AD7AF456A960EE7A9599B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE395A2BF1D73511000B9EE7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CB700151DFA4D1B00EF652B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CB7001F1DFA4D1B00EF652B /* ViewController.swift in Sources */,
+				8CB7001F1DFA4D1B00EF652B /* SignInVC.swift in Sources */,
 				8CB7001D1DFA4D1B00EF652B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +336,7 @@
 		};
 		8CB7002C1DFA4D1B00EF652B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3468F9623A655ADEC8E47AC6 /* Pods-NizarSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FA7YMTU4W8;
@@ -270,6 +350,7 @@
 		};
 		8CB7002D1DFA4D1B00EF652B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FA7YMTU4W8;
@@ -300,6 +381,7 @@
 				8CB7002D1DFA4D1B00EF652B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
