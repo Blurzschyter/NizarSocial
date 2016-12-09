@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		10282E8806F3FE35D1CEC500 /* Pods_NizarSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5775B5F9C22E11467235621B /* Pods_NizarSocial.framework */; };
 		8C1C66131DFA4DBA0055C36E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1C66121DFA4DBA0055C36E /* GoogleService-Info.plist */; };
+		8C89FD421DFA66B1005F4D2C /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89FD411DFA66B1005F4D2C /* FancyView.swift */; };
+		8C89FD451DFA6755005F4D2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89FD441DFA6755005F4D2C /* Constants.swift */; };
+		8C89FD471DFA6A39005F4D2C /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89FD461DFA6A39005F4D2C /* RoundBtn.swift */; };
+		8C89FD491DFA8FA9005F4D2C /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89FD481DFA8FA9005F4D2C /* FancyField.swift */; };
+		8C89FD4B1DFA9199005F4D2C /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89FD4A1DFA9199005F4D2C /* FancyBtn.swift */; };
 		8CB7001D1DFA4D1B00EF652B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7001C1DFA4D1B00EF652B /* AppDelegate.swift */; };
 		8CB7001F1DFA4D1B00EF652B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */; };
 		8CB700221DFA4D1B00EF652B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700201DFA4D1B00EF652B /* Main.storyboard */; };
@@ -20,6 +25,11 @@
 		3468F9623A655ADEC8E47AC6 /* Pods-NizarSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.debug.xcconfig"; sourceTree = "<group>"; };
 		5775B5F9C22E11467235621B /* Pods_NizarSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NizarSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1C66121DFA4DBA0055C36E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C89FD411DFA66B1005F4D2C /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		8C89FD441DFA6755005F4D2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8C89FD461DFA6A39005F4D2C /* RoundBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		8C89FD481DFA8FA9005F4D2C /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
+		8C89FD4A1DFA9199005F4D2C /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
 		8CB700191DFA4D1B00EF652B /* NizarSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NizarSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB7001C1DFA4D1B00EF652B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -50,6 +60,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C89FD3E1DFA6669005F4D2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8C89FD3F1DFA666F005F4D2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C89FD411DFA66B1005F4D2C /* FancyView.swift */,
+				8C89FD461DFA6A39005F4D2C /* RoundBtn.swift */,
+				8C89FD481DFA8FA9005F4D2C /* FancyField.swift */,
+				8C89FD4A1DFA9199005F4D2C /* FancyBtn.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8C89FD401DFA6674005F4D2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8C89FD431DFA6739005F4D2C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8C89FD441DFA6755005F4D2C /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		8CB700101DFA4D1B00EF652B = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +115,11 @@
 		8CB7001B1DFA4D1B00EF652B /* NizarSocial */ = {
 			isa = PBXGroup;
 			children = (
+				8C89FD431DFA6739005F4D2C /* Util */,
+				8C89FD401DFA6674005F4D2C /* Model */,
+				8C89FD3F1DFA666F005F4D2C /* View */,
+				8C89FD3E1DFA6669005F4D2C /* Controller */,
 				8CB7001C1DFA4D1B00EF652B /* AppDelegate.swift */,
-				8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */,
 				8CB700201DFA4D1B00EF652B /* Main.storyboard */,
 				8CB700231DFA4D1B00EF652B /* Assets.xcassets */,
 				8CB700251DFA4D1B00EF652B /* LaunchScreen.storyboard */,
@@ -216,8 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C89FD491DFA8FA9005F4D2C /* FancyField.swift in Sources */,
 				8CB7001F1DFA4D1B00EF652B /* SignInVC.swift in Sources */,
+				8C89FD471DFA6A39005F4D2C /* RoundBtn.swift in Sources */,
 				8CB7001D1DFA4D1B00EF652B /* AppDelegate.swift in Sources */,
+				8C89FD421DFA66B1005F4D2C /* FancyView.swift in Sources */,
+				8C89FD451DFA6755005F4D2C /* Constants.swift in Sources */,
+				8C89FD4B1DFA9199005F4D2C /* FancyBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
