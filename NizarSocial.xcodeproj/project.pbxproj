@@ -37,6 +37,7 @@
 		8CB700231DFA4D1B00EF652B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CB700261DFA4D1B00EF652B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CB700281DFA4D1B00EF652B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB770721E012E65007058EA /* NizarSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NizarSocial.entitlements; sourceTree = "<group>"; };
 		BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +116,7 @@
 		8CB7001B1DFA4D1B00EF652B /* NizarSocial */ = {
 			isa = PBXGroup;
 			children = (
+				8CB770721E012E65007058EA /* NizarSocial.entitlements */,
 				8C89FD431DFA6739005F4D2C /* Util */,
 				8C89FD401DFA6674005F4D2C /* Model */,
 				8C89FD3F1DFA666F005F4D2C /* View */,
@@ -175,6 +177,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FA7YMTU4W8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -391,6 +398,7 @@
 			baseConfigurationReference = 3468F9623A655ADEC8E47AC6 /* Pods-NizarSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NizarSocial/NizarSocial.entitlements;
 				DEVELOPMENT_TEAM = FA7YMTU4W8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -418,6 +426,7 @@
 			baseConfigurationReference = BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NizarSocial/NizarSocial.entitlements;
 				DEVELOPMENT_TEAM = FA7YMTU4W8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
