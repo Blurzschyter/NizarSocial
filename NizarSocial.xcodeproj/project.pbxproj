@@ -19,6 +19,10 @@
 		8CB700221DFA4D1B00EF652B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700201DFA4D1B00EF652B /* Main.storyboard */; };
 		8CB700241DFA4D1B00EF652B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700231DFA4D1B00EF652B /* Assets.xcassets */; };
 		8CB700271DFA4D1B00EF652B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700251DFA4D1B00EF652B /* LaunchScreen.storyboard */; };
+		8CBA89B01E00FD3D003C0E4B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBA89AC1E00FD3D003C0E4B /* Bolts.framework */; };
+		8CBA89B11E00FD3D003C0E4B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBA89AD1E00FD3D003C0E4B /* FBSDKCoreKit.framework */; };
+		8CBA89B21E00FD3D003C0E4B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBA89AE1E00FD3D003C0E4B /* FBSDKLoginKit.framework */; };
+		8CBA89B31E00FD3D003C0E4B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBA89AF1E00FD3D003C0E4B /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		8CB700231DFA4D1B00EF652B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CB700261DFA4D1B00EF652B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CB700281DFA4D1B00EF652B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CBA89AC1E00FD3D003C0E4B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		8CBA89AD1E00FD3D003C0E4B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		8CBA89AE1E00FD3D003C0E4B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		8CBA89AF1E00FD3D003C0E4B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +54,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				10282E8806F3FE35D1CEC500 /* Pods_NizarSocial.framework in Frameworks */,
+				8CBA89B11E00FD3D003C0E4B /* FBSDKCoreKit.framework in Frameworks */,
+				8CBA89B31E00FD3D003C0E4B /* FBSDKShareKit.framework in Frameworks */,
+				8CBA89B21E00FD3D003C0E4B /* FBSDKLoginKit.framework in Frameworks */,
+				8CBA89B01E00FD3D003C0E4B /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +67,10 @@
 		226F69F2B53AB03B946663F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CBA89AC1E00FD3D003C0E4B /* Bolts.framework */,
+				8CBA89AD1E00FD3D003C0E4B /* FBSDKCoreKit.framework */,
+				8CBA89AE1E00FD3D003C0E4B /* FBSDKLoginKit.framework */,
+				8CBA89AF1E00FD3D003C0E4B /* FBSDKShareKit.framework */,
 				5775B5F9C22E11467235621B /* Pods_NizarSocial.framework */,
 			);
 			name = Frameworks;
@@ -392,6 +408,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FA7YMTU4W8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseStorage/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks/frameworks\"",
+					/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = NizarSocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nizar.NizarSocial;
@@ -406,6 +436,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FA7YMTU4W8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GTMSessionFetcher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseStorage/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks/frameworks\"",
+					/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = NizarSocial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nizar.NizarSocial;
