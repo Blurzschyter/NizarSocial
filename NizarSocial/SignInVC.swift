@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
@@ -19,7 +20,15 @@ class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    //segue need to be performed inside viewdidappear. cant be cone in viewdidload
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
     
     @IBAction func fbLoginPressed(_ sender: AnyObject) {
@@ -27,11 +36,11 @@ class SignInVC: UIViewController {
         FBSDKLoginManager().logIn(withReadPermissions: ["email"], from: self) { (result, err) in
             
             if err != nil {
-                print("NIZAR : Unable to authenticate with facebook - \(err)")
+                print("JESS : Unable to authenticate with facebook - \(err)")
             } else if result?.isCancelled == true {
-                print("NIZAR : User cancelled facebook authentication")
+                print("JESS : User cancelled facebook authentication")
             } else {
-                print("NIZAR : SUCCESSFULLY authenticate.")
+                print("JESS : SUCCESSFULLY authenticate.")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
             }
@@ -44,9 +53,12 @@ class SignInVC: UIViewController {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             
             if error != nil {
-                print("NIZAR : Unable to authenticate with firebase - \(error)")
+                print("JESS : Unable to authenticate with firebase - \(error)")
             } else {
-                print("NIZAR : SUCCESS firebase authentication.")
+                print("JESS : SUCCESS firebase authentication.")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
     }
@@ -57,21 +69,30 @@ class SignInVC: UIViewController {
             
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil { //user registered in the system.
-                    print("NIZAR : CURRENT USER SUSCESSFULLY AUTHENTICATE WITH FIREBASE.")
+                    print("JESS : CURRENT USER SUSCESSFULLY AUTHENTICATE WITH FIREBASE.")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 } else { //user not registered. auto registered.
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
-                            print("NIZAR : Unable to authenticate new user using Firebase's Email")
+                            print("JESS : Unable to authenticate new user using Firebase's Email")
                         } else {
-                            print("NIZAR : Successfully authenticate & create user using Firebase's email")
+                            print("JESS : Successfully authenticate & create user using Firebase's email")
+                            if let user = user {
+                                self.completeSignIn(id: user.uid)
+                            }
                         }
                     })
                 }
-                
             })
-            
         }
-        
+    }
+    
+    func completeSignIn(id: String) {
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("JESS : Data saved to the keychain - \(keychainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
     

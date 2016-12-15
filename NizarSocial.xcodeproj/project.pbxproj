@@ -19,6 +19,7 @@
 		8CB700221DFA4D1B00EF652B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700201DFA4D1B00EF652B /* Main.storyboard */; };
 		8CB700241DFA4D1B00EF652B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700231DFA4D1B00EF652B /* Assets.xcassets */; };
 		8CB700271DFA4D1B00EF652B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700251DFA4D1B00EF652B /* LaunchScreen.storyboard */; };
+		8CC8DA4E1E027B15001BA45A /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8DA4D1E027B15001BA45A /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8CB700261DFA4D1B00EF652B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CB700281DFA4D1B00EF652B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB770721E012E65007058EA /* NizarSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NizarSocial.entitlements; sourceTree = "<group>"; };
+		8CC8DA4D1E027B15001BA45A /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				8CB7001E1DFA4D1B00EF652B /* SignInVC.swift */,
+				8CC8DA4D1E027B15001BA45A /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				8CB7001F1DFA4D1B00EF652B /* SignInVC.swift in Sources */,
 				8C89FD471DFA6A39005F4D2C /* RoundBtn.swift in Sources */,
 				8CB7001D1DFA4D1B00EF652B /* AppDelegate.swift in Sources */,
+				8CC8DA4E1E027B15001BA45A /* FeedVC.swift in Sources */,
 				8C89FD421DFA66B1005F4D2C /* FancyView.swift in Sources */,
 				8C89FD451DFA6755005F4D2C /* Constants.swift in Sources */,
 				8C89FD4B1DFA9199005F4D2C /* FancyBtn.swift in Sources */,
