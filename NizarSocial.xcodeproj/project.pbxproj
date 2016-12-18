@@ -20,6 +20,9 @@
 		8CB700241DFA4D1B00EF652B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700231DFA4D1B00EF652B /* Assets.xcassets */; };
 		8CB700271DFA4D1B00EF652B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB700251DFA4D1B00EF652B /* LaunchScreen.storyboard */; };
 		8CC8DA4E1E027B15001BA45A /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8DA4D1E027B15001BA45A /* FeedVC.swift */; };
+		8CC8DA501E03D843001BA45A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8DA4F1E03D843001BA45A /* CircleView.swift */; };
+		8CC8DA521E057453001BA45A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8DA511E057453001BA45A /* PostCell.swift */; };
+		8CC8DA551E05909A001BA45A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8DA541E05909A001BA45A /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		8CB700281DFA4D1B00EF652B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB770721E012E65007058EA /* NizarSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NizarSocial.entitlements; sourceTree = "<group>"; };
 		8CC8DA4D1E027B15001BA45A /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		8CC8DA4F1E03D843001BA45A /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		8CC8DA511E057453001BA45A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		8CC8DA541E05909A001BA45A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		BEC51ED885B8B4B4131C0AC9 /* Pods-NizarSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NizarSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-NizarSocial/Pods-NizarSocial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +85,8 @@
 				8C89FD461DFA6A39005F4D2C /* RoundBtn.swift */,
 				8C89FD481DFA8FA9005F4D2C /* FancyField.swift */,
 				8C89FD4A1DFA9199005F4D2C /* FancyBtn.swift */,
+				8CC8DA4F1E03D843001BA45A /* CircleView.swift */,
+				8CC8DA511E057453001BA45A /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 		8CB7001B1DFA4D1B00EF652B /* NizarSocial */ = {
 			isa = PBXGroup;
 			children = (
+				8CC8DA531E05908A001BA45A /* Services */,
 				8CB770721E012E65007058EA /* NizarSocial.entitlements */,
 				8C89FD431DFA6739005F4D2C /* Util */,
 				8C89FD401DFA6674005F4D2C /* Model */,
@@ -132,6 +141,14 @@
 				8C1C66121DFA4DBA0055C36E /* GoogleService-Info.plist */,
 			);
 			path = NizarSocial;
+			sourceTree = "<group>";
+		};
+		8CC8DA531E05908A001BA45A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8CC8DA541E05909A001BA45A /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		AADFB02E7D8A94E9818A386F /* Pods */ = {
@@ -273,14 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC8DA501E03D843001BA45A /* CircleView.swift in Sources */,
 				8C89FD491DFA8FA9005F4D2C /* FancyField.swift in Sources */,
 				8CB7001F1DFA4D1B00EF652B /* SignInVC.swift in Sources */,
 				8C89FD471DFA6A39005F4D2C /* RoundBtn.swift in Sources */,
 				8CB7001D1DFA4D1B00EF652B /* AppDelegate.swift in Sources */,
+				8CC8DA551E05909A001BA45A /* DataService.swift in Sources */,
 				8CC8DA4E1E027B15001BA45A /* FeedVC.swift in Sources */,
 				8C89FD421DFA66B1005F4D2C /* FancyView.swift in Sources */,
 				8C89FD451DFA6755005F4D2C /* Constants.swift in Sources */,
 				8C89FD4B1DFA9199005F4D2C /* FancyBtn.swift in Sources */,
+				8CC8DA521E057453001BA45A /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
