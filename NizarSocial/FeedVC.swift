@@ -15,10 +15,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
+    @IBOutlet weak var captionField: FancyField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
+    var imageSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +93,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         //when user select an image from the storage, get rid of the imagepicker view.
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            
+            imageSelected = true // when image is selected, the bool change its value
         } else {
             print("JESS : A valid image wasn't selected.")
         }
@@ -100,6 +105,37 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBAction func addImagePressed(_ sender: AnyObject) {
         
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func postBtnPressed(_ sender: AnyObject) {
+        //to force caption field to be entered b4 post
+        guard let caption = captionField.text, caption != "" else { //if condition not true, it will go right to statement.
+            print("JESS : Caption must be entered.")
+            return
+        }
+        
+        guard let img = imageAdd.image, imageSelected == true else {
+            print("JESS : An image must be selected.")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) { //image compression procedure
+            
+            let imageUid = NSUUID().uuidString //generate random string of characters
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imageUid).put(imgData, metadata: metadata, completion: { (metadata, error) in
+                
+                if error != nil {
+                    print("JESS : Unable to upload image in firebase.")
+                } else {
+                    print("JESS : Successfully upload image in firebase.")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                }
+            })
+        }
     }
     
 
