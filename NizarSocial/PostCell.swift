@@ -16,16 +16,20 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var profileImg: CircleView!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var caption: UITextView!
+    
+    var post: Post! //post is using Type Post
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(post: Post) {
+        
+        self.post = post
+        self.caption.text = post.caption
+        self.likeLbl.text = "\(post.likes)"
+        
     }
 
 }
