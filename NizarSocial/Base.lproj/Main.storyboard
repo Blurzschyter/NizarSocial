@@ -163,12 +163,16 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uok-iw-3yi">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="qHy-Q0-DBh" customClass="CircleView" customModule="NizarSocial" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="qHy-Q0-DBh" customClass="CircleView" customModule="NizarSocial" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="bHb-C1-h7a"/>
                                                     <constraint firstAttribute="height" constant="49" id="uI3-es-yst"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Akn-ke-tAF" appends="YES" id="SOQ-Dz-i8c"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a caption." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-5W-XPs" customClass="FancyField" customModule="NizarSocial" customModuleProvider="target">
                                                 <nil key="textColor"/>
@@ -302,6 +306,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="qHy-Q0-DBh" id="Emw-zz-S9X"/>
                         <outlet property="tableView" destination="Mqs-iL-Pcq" id="0q7-fL-2Bg"/>
                     </connections>
                 </viewController>
@@ -309,6 +314,11 @@
                 <tapGestureRecognizer id="FTj-54-l8F">
                     <connections>
                         <action selector="signOutPressed:" destination="DY1-6b-V1W" id="bVP-0t-t3G"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Akn-ke-tAF">
+                    <connections>
+                        <action selector="addImagePressed:" destination="DY1-6b-V1W" id="MAO-yp-IW9"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
