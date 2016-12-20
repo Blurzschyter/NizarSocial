@@ -17,17 +17,32 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var profileImg: CircleView!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var caption: UITextView!
+    @IBOutlet weak var likeImg: CircleView!
+    
     
     var post: Post! //post is using Type Post
+    
+   
+    var likesref: FIRDatabaseReference!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        //ui tap recognizer(drag n drop) cant be used at LIKES btn since it will generated repeatative list. therefore, we will manually program it.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1 //just tapped/pressed on times only to activate the next action
+        likeImg.addGestureRecognizer(tap)
+        likeImg.isUserInteractionEnabled = true
+        
     }
 
     func configureCell(post: Post, img: UIImage? = nil) { //the image is optional.maybe available, maybe not. if the image is not available, it will set to nil by default
         
         self.post = post
+        
+         likesref = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        
         self.caption.text = post.caption
         self.likeLbl.text = "\(post.likes)"
         
@@ -49,6 +64,33 @@ class PostCell: UITableViewCell {
                 }
             })
         }
+        
+        //--TO SEE EITHER THE CURRENT USER ALREADY LIKE THE IMAGE OR NOT--
+        //let likesref = DataService.ds.REF_USER_CURRENT.child("likes")
+        likesref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.likeImg.image = UIImage(named: "empty-heart")
+            } else {
+                self.likeImg.image = UIImage(named: "filled-heart")
+            }
+        })
+        
+    }
+    
+    func likeTapped(sender: UITapGestureRecognizer) {
+        
+        //let likesref = DataService.ds.REF_USER_CURRENT.child("likes")
+        likesref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.likeImg.image = UIImage(named: "filled-heart") //adjust the current heart image
+                self.post.adjustLikes(addLike: true) //adjust the likes number
+                self.likesref.setValue(true)
+            } else {
+                self.likeImg.image = UIImage(named: "empty-heart")
+                self.post.adjustLikes(addLike: false)
+                self.likesref.removeValue()
+            }
+        })
         
     }
 
