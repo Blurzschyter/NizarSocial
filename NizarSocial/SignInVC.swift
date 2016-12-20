@@ -12,8 +12,8 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
-class SignInVC: UIViewController {
-    
+class SignInVC: UIViewController, UITextFieldDelegate {
+    //UITextFieldDelegate - for hide keyboard after done
     
     @IBOutlet weak var emailField: FancyField!
     @IBOutlet weak var passwordField: FancyField!
@@ -21,7 +21,48 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailField.delegate = self
+        passwordField.delegate = self
+        
+        //--Adjusting content to accommodate the keyboard--//add on 20 dec 2016
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        //-------------------------------------------------
     }
+    
+    //--Adjusting content to accommodate the keyboard--//add on 20 dec 2016
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    //-------------------------------------------------
+    
+    //dissmiss keyboard when pressed return on the keyboard //add on 20 dec 2016
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //dissmiss keyboard when pressed anywhere on the background //add on 20 dec 2016
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailField.endEditing(true)
+        passwordField.endEditing(true)
+    }
+    
+    
     
     //segue need to be performed inside viewdidappear. cant be cone in viewdidload
     override func viewDidAppear(_ animated: Bool) {
